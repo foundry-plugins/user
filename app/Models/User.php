@@ -5,6 +5,7 @@ namespace Plugins\Foundry\User\Models;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
 
 /**
  * Class user
@@ -22,7 +23,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class user extends Authenticatable
 {
-    use Notifiable, SoftDeletes;
+    use Notifiable, SoftDeletes, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
