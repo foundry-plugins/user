@@ -1,0 +1,14 @@
+{
+    "name": "Foundry_User",
+    "alias": "foundry_user",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Plugins\\Foundry\\User\\Providers\\UserServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

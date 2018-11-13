@@ -1,0 +1,25 @@
+{
+    "name": "foundry/foundry_user",
+    "description": "",
+    "authors": [
+        {
+            "name": "Co-foundry",
+            "email": "digital@co-foundry.co.za"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Plugins\\Foundry\\User\\Providers\\UserServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Plugins\\Foundry\\User\\": "app/"
+        }
+    }
+}
