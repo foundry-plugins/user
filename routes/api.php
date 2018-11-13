@@ -13,6 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/foundry_user', function (Request $request) {
-    return $request->user();
+Route::prefix('v1')->group(function () {
+
+    Route::post('login', 'UserController@login');
+    Route::post('register','UserController@register');
+    Route::post('forgot/password','UserController@forgotPassword');
+    Route::post('reset/password','UserController@resetPassword');
+    Route::get('authenticate', 'UserController@authenticate')->name('authentication_required');
+
+    Route::group(['middleware' => 'auth:api'], function(){
+
+        Route::post('password','UserController@changePassword');
+
+    });
 });

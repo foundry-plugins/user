@@ -2,9 +2,8 @@
 
 namespace Plugins\Foundry\User\Http\Requests;
 
-use Foundry\Requests\Form as FormRequest;
 
-class user extends FormRequest
+class ResetPassword extends user
 {
      public function __construct($inputs)
      {
@@ -18,9 +17,9 @@ class user extends FormRequest
       */
      public function rules()
      {
-         // TODO: Implement rules() method.
          return [
-             //
+             'email' => 'required|email',
+             'password' => 'required|string|min:6|confirmed',
          ];
      }
 
@@ -31,7 +30,6 @@ class user extends FormRequest
       */
      public function authorize()
      {
-         // TODO: Implement authorize() method.
          return true;
      }
 
@@ -42,9 +40,10 @@ class user extends FormRequest
       */
      static function fields()
      {
-         // TODO: Implement fields() method.
          return [
-             //
+             'email',
+             'password',
+             'password_confirmation'
          ];
      }
 
@@ -55,10 +54,7 @@ class user extends FormRequest
       */
      public function messages()
      {
-         // TODO: Implement messages() method.
-         return [
-             //
-         ];
+         return [];
      }
 
     public function getFormView()
